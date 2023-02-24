@@ -233,26 +233,28 @@ title="Print to PDF"
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#since-we-re-on-the-topic-of-graphs-let-s-consider-another-classical-graph-greedy-problem-this-is-a-data-compression-problem-called-the-huffman-coding-problem">
-     Since we’re on the topic of graphs, let’s consider another classical graph greedy problem. This is a data compression problem called the Huffman coding problem.
+    <a class="reference internal nav-link" href="#huffman-coding-problem">
+     Huffman Coding Problem
     </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#okay-then-we-ve-established-the-nature-of-the-problem-we-want-to-make-a-language-that-is-non-ambiguous-and-minimal">
-     Okay, then, we’ve established the nature of the problem. We want to make a
-     <strong>
-      language
-     </strong>
-     that is
-     <strong>
-      non-ambiguous
-     </strong>
-     and
-     <strong>
-      minimal
-     </strong>
-     .
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#okay-then-we-ve-established-the-nature-of-the-problem-we-want-to-make-a-language-that-is-non-ambiguous-and-minimal">
+       Okay, then, we’ve established the nature of the problem. We want to make a
+       <strong>
+        language
+       </strong>
+       that is
+       <strong>
+        non-ambiguous
+       </strong>
+       and
+       <strong>
+        minimal
+       </strong>
+       .
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#what-do-you-do-when-you-run-into-a-tough-problem-you-draw-it-out">
@@ -299,26 +301,28 @@ title="Print to PDF"
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#since-we-re-on-the-topic-of-graphs-let-s-consider-another-classical-graph-greedy-problem-this-is-a-data-compression-problem-called-the-huffman-coding-problem">
-     Since we’re on the topic of graphs, let’s consider another classical graph greedy problem. This is a data compression problem called the Huffman coding problem.
+    <a class="reference internal nav-link" href="#huffman-coding-problem">
+     Huffman Coding Problem
     </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#okay-then-we-ve-established-the-nature-of-the-problem-we-want-to-make-a-language-that-is-non-ambiguous-and-minimal">
-     Okay, then, we’ve established the nature of the problem. We want to make a
-     <strong>
-      language
-     </strong>
-     that is
-     <strong>
-      non-ambiguous
-     </strong>
-     and
-     <strong>
-      minimal
-     </strong>
-     .
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#okay-then-we-ve-established-the-nature-of-the-problem-we-want-to-make-a-language-that-is-non-ambiguous-and-minimal">
+       Okay, then, we’ve established the nature of the problem. We want to make a
+       <strong>
+        language
+       </strong>
+       that is
+       <strong>
+        non-ambiguous
+       </strong>
+       and
+       <strong>
+        minimal
+       </strong>
+       .
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#what-do-you-do-when-you-run-into-a-tough-problem-you-draw-it-out">
@@ -390,8 +394,10 @@ title="Print to PDF"
 <span class="c1"># sum of lighter items&#39; value exceeds that of one valuable object.</span>
 
 <span class="c1"># 3. Find a balance!</span>
-<span class="c1"># Indeed, a ratio is what you&#39;re looking at as a solution to this one! Clearly, we want the</span>
-<span class="c1"># value to be maximized and the weight to be minimized, so you&#39;re looking at value/weight ratio!</span>
+<span class="c1"># Indeed, a ratio is what you&#39;re looking at as a solution</span>
+<span class="c1"># to this one! Clearly, we want the</span>
+<span class="c1"># value to be maximized and the weight to be minimized, </span>
+<span class="c1"># so you&#39;re looking at value/weight ratio!</span>
 
 <span class="k">def</span> <span class="nf">knapsack_v1</span><span class="p">(</span><span class="n">capacity</span><span class="p">,</span><span class="n">items</span><span class="p">):</span>
     <span class="n">value_weight_ratios</span> <span class="o">=</span> <span class="p">[]</span>
@@ -476,9 +482,11 @@ Best value is 70
 </div>
 <p>Let’s now try this on a problem in the wild! It won’t be obvious at first how this problem can be solved using greedy methods, but let’s break it down!</p>
 <p>Leetcode 11: Container with most water</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">You</span> <span class="n">are</span> <span class="n">given</span> <span class="n">an</span> <span class="n">integer</span> <span class="n">array</span> <span class="n">height</span> <span class="n">of</span> <span class="n">length</span> <span class="n">n</span><span class="o">.</span> <span class="n">There</span> <span class="n">are</span> <span class="n">n</span> <span class="n">vertical</span> <span class="n">lines</span> <span class="n">drawn</span> <span class="n">such</span> <span class="n">that</span> <span class="n">the</span> <span class="n">two</span> <span class="n">endpoints</span> <span class="n">of</span> <span class="n">the</span> <span class="n">ith</span> <span class="n">line</span> <span class="n">are</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">height</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">You</span> <span class="n">are</span> <span class="n">given</span> <span class="n">an</span> <span class="n">integer</span> <span class="n">array</span> <span class="n">height</span> <span class="n">of</span> <span class="n">length</span> <span class="n">n</span><span class="o">.</span> <span class="n">There</span> <span class="n">are</span> <span class="n">n</span> <span class="n">vertical</span> <span class="n">lines</span> <span class="n">drawn</span> <span class="n">such</span> <span class="n">that</span> 
+<span class="n">the</span> <span class="n">two</span> <span class="n">endpoints</span> <span class="n">of</span> <span class="n">the</span> <span class="n">ith</span> <span class="n">line</span> <span class="n">are</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">height</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span>
 
-<span class="n">Find</span> <span class="n">two</span> <span class="n">lines</span> <span class="n">that</span> <span class="n">together</span> <span class="k">with</span> <span class="n">the</span> <span class="n">x</span><span class="o">-</span><span class="n">axis</span> <span class="n">form</span> <span class="n">a</span> <span class="n">container</span><span class="p">,</span> <span class="n">such</span> <span class="n">that</span> <span class="n">the</span> <span class="n">container</span> <span class="n">contains</span> <span class="n">the</span> <span class="n">most</span> <span class="n">water</span><span class="o">.</span>
+<span class="n">Find</span> <span class="n">two</span> <span class="n">lines</span> <span class="n">that</span> <span class="n">together</span> <span class="k">with</span> <span class="n">the</span> <span class="n">x</span><span class="o">-</span><span class="n">axis</span> <span class="n">form</span> <span class="n">a</span> <span class="n">container</span><span class="p">,</span> <span class="n">such</span> <span class="n">that</span> <span class="n">the</span> <span class="n">container</span> 
+<span class="n">contains</span> <span class="n">the</span> <span class="n">most</span> <span class="n">water</span><span class="o">.</span>
 
 <span class="n">Return</span> <span class="n">the</span> <span class="n">maximum</span> <span class="n">amount</span> <span class="n">of</span> <span class="n">water</span> <span class="n">a</span> <span class="n">container</span> <span class="n">can</span> <span class="n">store</span><span class="o">.</span>
 
@@ -597,8 +605,8 @@ area of the water.</p>
 <img alt="Graph degrees" src="_images/topo2.png" /></p>
 <p>Okay, now what?</p>
 <p>Well, there’s definitely a pattern here, and I’m pretty sure it’s very visible after the two problems that we’ve seen before.</p>
-<p>You can do one of two things.
-A. Choose the weakest guy and remove him from the equation. Every link flowing to him now disappears.</p>
+<p>You can do one of two things.</p>
+<p>A. Choose the weakest guy and remove him from the equation. Every link flowing to him now disappears.</p>
 <p>B. Choose the strongest guy and remove him from the equation. Every link flowing from him now disappears.</p>
 <p>Out of respect to computer science, we choose to do the latter. In the power matrix representation, you see, this choice does not matter. However, given a problem with linked list representations, it becomes much tougher to do A, logistically.</p>
 <p>Well, what then? We remove Batman!</p>
@@ -683,7 +691,8 @@ A. Choose the weakest guy and remove him from the equation. Every link flowing t
     <span class="k">if</span> <span class="n">infinite</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">write</span><span class="p">:</span>
             <span class="k">return</span> <span class="s2">&quot;No ordering could be established!&quot;</span>
-        <span class="n">output_string</span> <span class="o">=</span> <span class="s2">&quot;Beyond this: Strongest&gt;&gt;  &quot;</span><span class="o">+</span><span class="n">output_string</span><span class="o">+</span><span class="s2">&quot;  &lt;&lt;weakest, ordering could not be established.&quot;</span>
+        <span class="n">output_string</span> <span class="o">=</span> <span class="s2">&quot;Beyond this: Strongest&gt;&gt;  &quot;</span><span class="o">+</span><span class="n">output_string</span><span class="o">+</span>\
+            <span class="s2">&quot;  &lt;&lt;weakest, </span><span class="se">\n</span><span class="s2">ordering could not be established.&quot;</span>
     <span class="k">return</span> <span class="n">output_string</span>
 
 
@@ -713,20 +722,24 @@ Ordering... Result: Batman &gt; Superman &gt; Green Arrow &gt; The Flash
 <span class="n">power_matrix_infinite_a</span> <span class="o">=</span> <span class="p">[</span><span class="n">superman</span><span class="p">,</span><span class="n">batman</span><span class="p">,</span><span class="n">green_arrow</span><span class="p">,</span><span class="n">the_flash_a</span><span class="p">]</span>
 <span class="n">power_matrix_infinite_b</span> <span class="o">=</span> <span class="p">[</span><span class="n">superman</span><span class="p">,</span><span class="n">batman</span><span class="p">,</span><span class="n">green_arrow</span><span class="p">,</span><span class="n">the_flash_b</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ordering... Result:&quot;</span><span class="p">,</span><span class="n">topological_ordering_v2</span><span class="p">(</span><span class="n">power_matrix_infinite_a</span><span class="p">,</span><span class="n">power_matrix_naming</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ordering... Result:&quot;</span><span class="p">,</span><span class="n">topological_ordering_v2</span><span class="p">(</span><span class="n">power_matrix_infinite_b</span><span class="p">,</span><span class="n">power_matrix_naming</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ordering... Result:&quot;</span><span class="p">,</span><span class="n">topological_ordering_v2</span><span class="p">(</span><span class="n">power_matrix_infinite_a</span><span class="p">,</span>\
+                                                    <span class="n">power_matrix_naming</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ordering... Result:&quot;</span><span class="p">,</span><span class="n">topological_ordering_v2</span><span class="p">(</span><span class="n">power_matrix_infinite_b</span><span class="p">,</span>\
+                                                    <span class="n">power_matrix_naming</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ordering... Result: No ordering could be established!
-Ordering... Result: Beyond this: Strongest&gt;&gt;  Batman  &lt;&lt;weakest, ordering could not be established.
+Ordering... Result: Beyond this: Strongest&gt;&gt;  Batman  &lt;&lt;weakest, 
+ordering could not be established.
 </pre></div>
 </div>
 </div>
 </div>
-<section id="since-we-re-on-the-topic-of-graphs-let-s-consider-another-classical-graph-greedy-problem-this-is-a-data-compression-problem-called-the-huffman-coding-problem">
-<h2>Since we’re on the topic of graphs, let’s consider another classical graph greedy problem. This is a data compression problem called the Huffman coding problem.<a class="headerlink" href="#since-we-re-on-the-topic-of-graphs-let-s-consider-another-classical-graph-greedy-problem-this-is-a-data-compression-problem-called-the-huffman-coding-problem" title="Permalink to this headline">#</a></h2>
+<section id="huffman-coding-problem">
+<h2>Huffman Coding Problem<a class="headerlink" href="#huffman-coding-problem" title="Permalink to this headline">#</a></h2>
+<p>Since we’re on the topic of graphs, let’s consider another classical graph greedy problem. This is a data compression problem called the Huffman coding problem.</p>
 <p>The idea behind Huffman coding is this:</p>
 <ol class="simple">
 <li><p>You have a limited “alphabet” of symbols that will be sent over a certain channel in binary.</p></li>
@@ -740,13 +753,13 @@ Well, consider the message 000. Is it ab? Or ba?
 </div>
 <p>This sort of ambiguity is not allowed in a correct solution. There should be only <strong>one</strong> valid cut.</p>
 <p>At the same time, depending on the messages you’re sending, you’re gonna want this code to be minimal. <strong>Common letters should thus occupy less space.</strong></p>
-</section>
 <section id="okay-then-we-ve-established-the-nature-of-the-problem-we-want-to-make-a-language-that-is-non-ambiguous-and-minimal">
-<h2>Okay, then, we’ve established the nature of the problem. We want to make a <strong>language</strong> that is <strong>non-ambiguous</strong> and <strong>minimal</strong>.<a class="headerlink" href="#okay-then-we-ve-established-the-nature-of-the-problem-we-want-to-make-a-language-that-is-non-ambiguous-and-minimal" title="Permalink to this headline">#</a></h2>
+<h3>Okay, then, we’ve established the nature of the problem. We want to make a <strong>language</strong> that is <strong>non-ambiguous</strong> and <strong>minimal</strong>.<a class="headerlink" href="#okay-then-we-ve-established-the-nature-of-the-problem-we-want-to-make-a-language-that-is-non-ambiguous-and-minimal" title="Permalink to this headline">#</a></h3>
 <p><em>Let’s go about fixing the easier part of the problem; How do you make a language minimal?</em></p>
 <p><strong>Well, you make the most common case minimal!</strong> As we mentioned three points ago, common letters should occupy less space!</p>
 <p>So given a frequency table of how many letters on an average of each type cross the channel per unit time, we can figure out the most minimal encoding!</p>
 <p><em>What about non-ambiguous nature? Well, that’s a tougher problem.</em></p>
+</section>
 </section>
 <section id="what-do-you-do-when-you-run-into-a-tough-problem-you-draw-it-out">
 <h2>What do you do when you run into a tough problem? You <strong>draw it out!</strong><a class="headerlink" href="#what-do-you-do-when-you-run-into-a-tough-problem-you-draw-it-out" title="Permalink to this headline">#</a></h2>
@@ -761,7 +774,8 @@ Well, consider the message 000. Is it ab? Or ba?
 
 <span class="n">Output</span><span class="p">:</span>
 
-<span class="n">A</span> <span class="n">unique</span> <span class="n">language</span> <span class="n">that</span> <span class="n">provides</span> <span class="n">an</span> <span class="n">interpretation</span> <span class="k">for</span> <span class="n">each</span> <span class="n">letter</span> <span class="n">on</span> <span class="n">the</span> <span class="n">letter</span> <span class="nb">set</span><span class="p">,</span> <span class="ow">and</span> <span class="ow">is</span> <span class="n">minimal</span> <span class="n">based</span> <span class="n">on</span> <span class="n">letter</span> <span class="n">frequency</span><span class="o">.</span>
+<span class="n">A</span> <span class="n">unique</span> <span class="n">language</span> <span class="n">that</span> <span class="n">provides</span> <span class="n">an</span> <span class="n">interpretation</span> <span class="k">for</span> <span class="n">each</span> <span class="n">letter</span> <span class="n">on</span> 
+<span class="n">the</span> <span class="n">letter</span> <span class="nb">set</span><span class="p">,</span> <span class="ow">and</span> <span class="ow">is</span> <span class="n">minimal</span> <span class="n">based</span> <span class="n">on</span> <span class="n">letter</span> <span class="n">frequency</span><span class="o">.</span>
 </pre></div>
 </div>
 <p><em>You want to make it <strong>efficient</strong> and <strong>non-ambiguous</strong>.</em></p>
