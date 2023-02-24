@@ -1,0 +1,955 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Let’s first list out the four major families &#8212; My Jupyter Book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint single-page" id="site-navigation">
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/algorithm-basics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/algorithm-basics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Let’s first list out the four major families
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#greedy-algorithms">
+   1. Greedy algorithms
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#since-we-re-on-the-topic-of-graphs-let-s-consider-another-classical-graph-greedy-problem-this-is-a-data-compression-problem-called-the-huffman-coding-problem">
+     Since we’re on the topic of graphs, let’s consider another classical graph greedy problem. This is a data compression problem called the Huffman coding problem.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#okay-then-we-ve-established-the-nature-of-the-problem-we-want-to-make-a-language-that-is-non-ambiguous-and-minimal">
+     Okay, then, we’ve established the nature of the problem. We want to make a
+     <strong>
+      language
+     </strong>
+     that is
+     <strong>
+      non-ambiguous
+     </strong>
+     and
+     <strong>
+      minimal
+     </strong>
+     .
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-do-you-do-when-you-run-into-a-tough-problem-you-draw-it-out">
+     What do you do when you run into a tough problem? You
+     <strong>
+      draw it out!
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-problem">
+     The problem
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Let’s first list out the four major families</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Let’s first list out the four major families
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#greedy-algorithms">
+   1. Greedy algorithms
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#since-we-re-on-the-topic-of-graphs-let-s-consider-another-classical-graph-greedy-problem-this-is-a-data-compression-problem-called-the-huffman-coding-problem">
+     Since we’re on the topic of graphs, let’s consider another classical graph greedy problem. This is a data compression problem called the Huffman coding problem.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#okay-then-we-ve-established-the-nature-of-the-problem-we-want-to-make-a-language-that-is-non-ambiguous-and-minimal">
+     Okay, then, we’ve established the nature of the problem. We want to make a
+     <strong>
+      language
+     </strong>
+     that is
+     <strong>
+      non-ambiguous
+     </strong>
+     and
+     <strong>
+      minimal
+     </strong>
+     .
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-do-you-do-when-you-run-into-a-tough-problem-you-draw-it-out">
+     What do you do when you run into a tough problem? You
+     <strong>
+      draw it out!
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-problem">
+     The problem
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="let-s-first-list-out-the-four-major-families">
+<h1>Let’s first list out the four major families<a class="headerlink" href="#let-s-first-list-out-the-four-major-families" title="Permalink to this headline">#</a></h1>
+<ol class="simple">
+<li><p>Greedy</p></li>
+<li><p>Divide and Conquer</p></li>
+<li><p>Dynamic</p></li>
+<li><p>Graphs</p></li>
+</ol>
+<p>In these four families lies almost all of the intricacy you’ll ever need to know about algorithms. Some of these mesh with others, as you’ll see in different problems, and graphs are, as a whole, a mesh of the other three plus a bit more stuff.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="greedy-algorithms">
+<h1>1. Greedy algorithms<a class="headerlink" href="#greedy-algorithms" title="Permalink to this headline">#</a></h1>
+<p>Remember:</p>
+<ol class="simple">
+<li><p>Make a smart choice</p></li>
+<li><p>Prove that the choice is indeed smart</p></li>
+<li><p>Prove that the choice reduces the problem to a simpler form of the original problem</p></li>
+</ol>
+<p>That’s the classical form of a greedy algorithm’s anatomy, and the machinery needed to prove that the algorithm works.</p>
+<p>We don’t need that to specifically beat Leetcode, but understand that:</p>
+<ol class="simple">
+<li><p>If the problem can be reduced to a smaller version of itself, and</p></li>
+<li><p>If this efficiently deals with the problem at hand,</p></li>
+</ol>
+<p>you’re done!</p>
+<p>Let us now deal with the classic “lesson 1” of greedy algorithms, the knapsack problem!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You have a backpack with a certain capacity.</span>
+<span class="c1"># In front of you are some items of treasure.</span>
+<span class="c1"># You want to fill up the bag with the highest amount of value possible.</span>
+
+<span class="c1"># Each item is an array of two elements, with the first element being its value,</span>
+<span class="c1"># and the second one being its weight.</span>
+
+<span class="c1"># What is a smart decision you can make to ease the problem along?</span>
+
+<span class="c1"># 1. Put in the lightest objects!</span>
+<span class="c1"># Not such a good idea, since you&#39;ll have objects that have a high value, but high weight.</span>
+
+<span class="c1"># 2. Put in the most valuable objects!</span>
+<span class="c1"># Again, not such a great idea, since this means you&#39;ll miss an optimum solution where the </span>
+<span class="c1"># sum of lighter items&#39; value exceeds that of one valuable object.</span>
+
+<span class="c1"># 3. Find a balance!</span>
+<span class="c1"># Indeed, a ratio is what you&#39;re looking at as a solution to this one! Clearly, we want the</span>
+<span class="c1"># value to be maximized and the weight to be minimized, so you&#39;re looking at value/weight ratio!</span>
+
+<span class="k">def</span> <span class="nf">knapsack_v1</span><span class="p">(</span><span class="n">capacity</span><span class="p">,</span><span class="n">items</span><span class="p">):</span>
+    <span class="n">value_weight_ratios</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+        <span class="n">value_weight_ratios</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Alright, so you&#39;ve got an idea of what you wish to do! But now comes the next part.</span>
+<span class="c1"># You want to do this whole op in an efficient manner that lets you easily recover items</span>
+<span class="c1"># in descending order of value-weight ratio.</span>
+<span class="c1"># Solution:</span>
+<span class="c1"># A. Just write indices! Apply an insertion sort!</span>
+
+<span class="k">def</span> <span class="nf">knapsack_v2</span><span class="p">(</span><span class="n">capacity</span><span class="p">,</span> <span class="n">items</span><span class="p">):</span>
+    <span class="n">value_weight_ratios</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span><span class="p">,</span><span class="n">index</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
+        <span class="n">ratio</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value_weight_ratios</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">value_weight_ratios</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">ratio</span><span class="p">,</span><span class="n">index</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">breakflag</span><span class="o">=</span><span class="kc">False</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">value_weight_ratios</span><span class="p">)):</span>
+                <span class="k">if</span> <span class="n">value_weight_ratios</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;</span><span class="n">ratio</span><span class="p">:</span>
+                    <span class="n">value_weight_ratios</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">i</span><span class="p">,[</span><span class="n">ratio</span><span class="p">,</span><span class="n">index</span><span class="p">])</span>
+                    <span class="n">breakflag</span><span class="o">=</span><span class="kc">True</span>
+                    <span class="k">break</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">breakflag</span><span class="p">:</span>
+                <span class="n">value_weight_ratios</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">ratio</span><span class="p">,</span><span class="n">index</span><span class="p">])</span>
+
+<span class="c1"># Sure, this works, but it&#39;s rather... Inelegant, to put it mildly.</span>
+<span class="c1"># This is how I&#39;d do it if I had no access to libraries or sort APIs though.</span>
+<span class="c1"># If I DID have access to sort APIs, this problem becomes trivial:</span>
+<span class="c1"># B. Make a lambda!</span>
+
+<span class="k">def</span> <span class="nf">knapsack_v3</span><span class="p">(</span><span class="n">capacity</span><span class="p">,</span><span class="n">items</span><span class="p">):</span>
+    <span class="n">items</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Cool! Now what? Well, we just need to sequentially run through the array</span>
+<span class="c1"># and pick items up as we go! Of course, an item with a higher weight</span>
+<span class="c1"># than the current capacity will be jumped over.</span>
+
+<span class="k">def</span> <span class="nf">knapsack_v4</span><span class="p">(</span><span class="n">capacity</span><span class="p">,</span><span class="n">items</span><span class="p">):</span>
+    <span class="n">items</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Items sorted in descending value metric:&quot;</span><span class="p">,</span><span class="n">items</span><span class="p">)</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">while</span> <span class="n">capacity</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="p">[</span><span class="n">val</span><span class="p">,</span><span class="n">wt</span><span class="p">]</span><span class="o">=</span><span class="n">items</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">wt</span><span class="o">&gt;</span><span class="n">capacity</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Passing over [&quot;</span><span class="p">,</span><span class="n">val</span><span class="p">,</span><span class="s2">&quot;,&quot;</span><span class="p">,</span><span class="n">wt</span><span class="p">,</span><span class="s2">&quot;] , too heavy!&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="n">value</span><span class="o">+=</span><span class="n">val</span>
+        <span class="n">capacity</span><span class="o">-=</span><span class="n">wt</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Picked up [&quot;</span><span class="p">,</span><span class="n">val</span><span class="p">,</span><span class="s2">&quot;,&quot;</span><span class="p">,</span><span class="n">wt</span><span class="p">,</span><span class="s2">&quot;]&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">value</span>
+
+<span class="c1"># Time to test!</span>
+<span class="n">capacity</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">items</span><span class="o">=</span><span class="p">[[</span><span class="mi">100</span><span class="p">,</span><span class="mi">15</span><span class="p">],[</span><span class="mi">50</span><span class="p">,</span><span class="mi">10</span><span class="p">],[</span><span class="mi">60</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best value is&quot;</span><span class="p">,</span><span class="n">knapsack_v4</span><span class="p">(</span><span class="n">capacity</span><span class="p">,</span><span class="n">items</span><span class="p">))</span>
+
+<span class="c1"># To recap:</span>
+<span class="c1"># 1. Make a smart decision!</span>
+<span class="c1">#    We choose the item that has the best value-to-weight ratio that will fit</span>
+<span class="c1">#    inside the bag!</span>
+<span class="c1"># 2. Prove that the decision is smart!</span>
+<span class="c1">#    To be brief, the score assigned to an item is directly proportional to its value</span>
+<span class="c1">#    and inversely proportional to its weight. This is why the decision is smart!</span>
+<span class="c1"># 3. Prove that the decision reduces the size of the problem!</span>
+<span class="c1">#    At each epoch, we reduce the size of the problem set by one item, guaranteed.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Items sorted in descending value metric: [[60, 7], [100, 15], [50, 10], [10, 3]]
+Picked up [ 60 , 7 ]
+Passing over [ 100 , 15 ] , too heavy!
+Passing over [ 50 , 10 ] , too heavy!
+Picked up [ 10 , 3 ]
+Best value is 70
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s now try this on a problem in the wild! It won’t be obvious at first how this problem can be solved using greedy methods, but let’s break it down!</p>
+<p>Leetcode 11: Container with most water</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">You</span> <span class="n">are</span> <span class="n">given</span> <span class="n">an</span> <span class="n">integer</span> <span class="n">array</span> <span class="n">height</span> <span class="n">of</span> <span class="n">length</span> <span class="n">n</span><span class="o">.</span> <span class="n">There</span> <span class="n">are</span> <span class="n">n</span> <span class="n">vertical</span> <span class="n">lines</span> <span class="n">drawn</span> <span class="n">such</span> <span class="n">that</span> <span class="n">the</span> <span class="n">two</span> <span class="n">endpoints</span> <span class="n">of</span> <span class="n">the</span> <span class="n">ith</span> <span class="n">line</span> <span class="n">are</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">height</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span>
+
+<span class="n">Find</span> <span class="n">two</span> <span class="n">lines</span> <span class="n">that</span> <span class="n">together</span> <span class="k">with</span> <span class="n">the</span> <span class="n">x</span><span class="o">-</span><span class="n">axis</span> <span class="n">form</span> <span class="n">a</span> <span class="n">container</span><span class="p">,</span> <span class="n">such</span> <span class="n">that</span> <span class="n">the</span> <span class="n">container</span> <span class="n">contains</span> <span class="n">the</span> <span class="n">most</span> <span class="n">water</span><span class="o">.</span>
+
+<span class="n">Return</span> <span class="n">the</span> <span class="n">maximum</span> <span class="n">amount</span> <span class="n">of</span> <span class="n">water</span> <span class="n">a</span> <span class="n">container</span> <span class="n">can</span> <span class="n">store</span><span class="o">.</span>
+
+<span class="n">Notice</span> <span class="n">that</span> <span class="n">you</span> <span class="n">may</span> <span class="ow">not</span> <span class="n">slant</span> <span class="n">the</span> <span class="n">container</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><img alt="Problem statement" src="_images/leet11.png" /></p>
+<p>Right, let’s make sense of this problem first.</p>
+<p>You’ve got these bars that correspond to water barriers.
+Trivially, the height of the smallest of the two bars
+multiplied by the distance between them defines the
+area of the water.</p>
+<p>Cool, but how do you make this problem tick? What’s a smart decision?</p>
+<p>Let’s run through some candidates!</p>
+<ol class="simple">
+<li><p>Pick the tallest/furthest bars, this isn’t even a greedy problem lol</p></li>
+</ol>
+<p>Well, the tallest bars, even in the above example, would not work, since they have an area of 8x5 = 40, which is smaller than the actual answer, 49. As for the furthest, you’d literally only manage an area of 8 square units.</p>
+<ol class="simple">
+<li><p>Cast a wide net and start to tighten it. Take the leftmost and rightmost one, get the area, and try to improve it.</p></li>
+</ol>
+<p>Okay, how?</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1. Move the taller bar to find an even taller one
+    Okay, this is a joke option, ofc it won&#39;t work, since area is driven by the smaller bar.
+2. Move the shorter bar to find a taller one
+    Definitely a smart decision!
+</pre></div>
+</div>
+<p>Okay, how do we know that this is a smart decision?</p>
+<ol class="simple">
+<li><p>Remember that your breadth is only going to reduce unitarily as you go, making it safe to say that you’re not losing any strange edgecases to this reduction.</p></li>
+<li><p>Remember that you’re only improving on the area at all times, since you can only get better area if you move the smaller bar. Even if you worsen your area now, you’ll only improve it later, not missing any edgecases.</p></li>
+</ol>
+<p>This causes you to miss zero edgecases either lengthwise or breadthwise.</p>
+<p>Cool, then how does this reduce the problem?</p>
+<p>At each epoch, you’re turning the graph into a smaller one, guaranteed. This will terminate the algorithm eventually, satisfying the termination constraint.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let us now build it!</span>
+
+<span class="k">def</span> <span class="nf">max_area</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
+    <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">right</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">height</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+    <span class="n">maxarea</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">while</span> <span class="n">left</span><span class="o">&lt;</span><span class="n">right</span><span class="p">:</span>
+        <span class="c1"># Like we said before, length is just the minimum of the two bars.</span>
+        <span class="n">length</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">height</span><span class="p">[</span><span class="n">left</span><span class="p">],</span><span class="n">height</span><span class="p">[</span><span class="n">right</span><span class="p">])</span>
+        <span class="n">breadth</span> <span class="o">=</span> <span class="n">right</span><span class="o">-</span><span class="n">left</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="n">length</span><span class="o">*</span><span class="n">breadth</span>
+        <span class="c1"># Update optimum area if you do better.</span>
+        <span class="k">if</span> <span class="n">area</span><span class="o">&gt;</span><span class="n">maxarea</span><span class="p">:</span>
+            <span class="n">maxarea</span> <span class="o">=</span> <span class="n">area</span>
+        <span class="c1"># Move the smaller bar up/down depending on which</span>
+        <span class="c1"># side it&#39;s on.</span>
+        <span class="k">if</span> <span class="n">height</span><span class="p">[</span><span class="n">left</span><span class="p">]</span><span class="o">&gt;</span><span class="n">height</span><span class="p">[</span><span class="n">right</span><span class="p">]:</span>
+            <span class="n">right</span><span class="o">-=</span><span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="n">left</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">maxarea</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">max_area</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49
+</pre></div>
+</div>
+</div>
+</div>
+<p>A better understanding of how greedy algorithms work, or rather, a more visual understanding, can be gained by looking at how they apply to graph problems. As we’ve discussed before, graphs are a family of algorithms that don’t exactly have their own archetype; Rather, they pull tactics from all the other three main families.</p>
+<p>Let’s take on an interesting example. You have five superheroes, labelled as 0,1,2,3,4. You’re with your friends arguing about who is stronger, and you have at your disposal a battle log of these superheroes, across comic series, beating each other. Now, can you establish a top dog?</p>
+<p>This problem, right here, is called a “topological ordering problem”. It’s a classical graph problem, and it’s more interesting if we put some skin in the game. Let’s name these five instead of them being dumb numbers. Sure, we’ll change them back to numbers when we program them of course.</p>
+<p>Heroes:</p>
+<ul class="simple">
+<li><p>Superman</p></li>
+<li><p>Batman</p></li>
+<li><p>Green Arrow</p></li>
+<li><p>The Flash</p></li>
+</ul>
+<p>Now, notation! If a character A beats a character B, we draw an arrow from A to B, like so:  A-&gt;B</p>
+<p>Okay, now for our evidence.</p>
+<ul class="simple">
+<li><p>Superman’s known to have beaten Green Arrow and The Flash.</p></li>
+<li><p>Batman’s beaten Superman and Green Arrow.</p></li>
+<li><p>Green Arrow’s beaten The Flash.</p></li>
+<li><p>The Flash hasn’t really beaten anyone in this list. Yet.</p></li>
+</ul>
+<p>So what do you have?</p>
+<ul class="simple">
+<li><p>Superman-&gt;Green Arrow</p></li>
+<li><p>Superman-&gt;The Flash</p></li>
+<li><p>Batman-&gt;Superman</p></li>
+<li><p>Batman-&gt;Green Arrow</p></li>
+<li><p>Green Arrow-&gt;The Flash</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s quickly write out a representation. If a character beats another, there&#39;s a 1 on their &quot;power matrix&quot; for that guy.</span>
+<span class="n">superman</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">batman</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">green_arrow</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">the_flash</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">power_matrix</span> <span class="o">=</span> <span class="p">[</span><span class="n">superman</span><span class="p">,</span><span class="n">batman</span><span class="p">,</span><span class="n">green_arrow</span><span class="p">,</span><span class="n">the_flash</span><span class="p">]</span>
+<span class="n">power_matrix_naming</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Superman&#39;</span><span class="p">,</span><span class="s1">&#39;Batman&#39;</span><span class="p">,</span><span class="s1">&#39;Green Arrow&#39;</span><span class="p">,</span><span class="s1">&#39;The Flash&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Okay, so you have a representation of things. The question is, how do you find a top dog? Well, this is where we come to a classic tactic to solving graph problems: Draw it out!
+<img alt="Topological ordering - Basic" src="_images/topo1.png" /></p>
+<p>Okay, that’s cool, but what do you see?</p>
+<p>Well, you can see that the arrows are what really matters in this racket.</p>
+<p>Let’s write down the count of incoming and outgoing arrows next to the corresponding node!
+<img alt="Graph degrees" src="_images/topo2.png" /></p>
+<p>Okay, now what?</p>
+<p>Well, there’s definitely a pattern here, and I’m pretty sure it’s very visible after the two problems that we’ve seen before.</p>
+<p>You can do one of two things.
+A. Choose the weakest guy and remove him from the equation. Every link flowing to him now disappears.</p>
+<p>B. Choose the strongest guy and remove him from the equation. Every link flowing from him now disappears.</p>
+<p>Out of respect to computer science, we choose to do the latter. In the power matrix representation, you see, this choice does not matter. However, given a problem with linked list representations, it becomes much tougher to do A, logistically.</p>
+<p>Well, what then? We remove Batman!</p>
+<p><img alt="Step 1" src="_images/topo3.png" /></p>
+<p>Well, now clearly, Superman is the strongest. Remove him!</p>
+<p><img alt="Step 2" src="_images/topo4.png" /></p>
+<p>Now it’s Green Arrow!</p>
+<p><img alt="Step 3" src="_images/topo4.png" /></p>
+<p>Finally, we’re left with The Flash. Oof.</p>
+<p><img alt="Step 4" src="_images/topo5.png" /></p>
+<p>What do we now know?</p>
+<p>Well, based on the order in which we took superheroes out of the equation, we know that:</p>
+<ul class="simple">
+<li><p>Batman is the strongest, was the first to be removed.</p></li>
+<li><p>Superman is the next strongest.</p></li>
+<li><p>Then comes Green Arrow.</p></li>
+<li><p>And finally, it’s The Flash.</p></li>
+</ul>
+<p>Note that we used the white numbers to make our call. At each iteration, we chose to remove the node with no incoming arrows.</p>
+<p>We call the number of incoming arrows the <strong>degree</strong>.</p>
+<p>Overall:</p>
+<ol class="simple">
+<li><p>Choose the node with degree 0.</p></li>
+<li><p>Update degrees after removing that node, and adding it to the queue.</p></li>
+<li><p>Continue 1 until you no longer can.</p></li>
+</ol>
+<p>Okay, so there’s also one extra thing.</p>
+<p>If you cannot find a node with degree zero, but there’s still nodes remaining, you’ve run into a graph that is <strong>impossible to order</strong>. This would have been the case in our problem if we had The Flash beating Batman. In fact, in our example, The Flash beating anyone else would mean an impossible-to-order graph.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Core logic for getting to step 1. We need to compute</span>
+<span class="c1"># incoming arrows. The easiest way to do this is to look at</span>
+<span class="c1"># who marked the character as a win.</span>
+
+<span class="k">def</span> <span class="nf">topological_ordering_v1</span><span class="p">(</span><span class="n">graph</span><span class="p">):</span>
+    <span class="n">degree</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">record</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">character</span><span class="p">):</span>
+            <span class="n">degree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">+=</span><span class="n">record</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incoming degrees:&quot;</span><span class="p">,</span><span class="n">degree</span><span class="p">)</span>
+
+<span class="c1"># Loop logic: Find a target, remove all of its</span>
+<span class="c1"># outgoing connections by reducing the degree on them.</span>
+<span class="c1"># Also change the degree of the current element to -1</span>
+<span class="c1"># once you&#39;ve used it up, denoting that it is now out of the equation.</span>
+<span class="k">def</span> <span class="nf">topological_ordering_v1_1</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span><span class="n">titles</span><span class="p">):</span>
+    <span class="n">degree</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">record</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">character</span><span class="p">):</span>
+            <span class="n">degree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">+=</span><span class="n">record</span>
+    <span class="k">while</span> <span class="mi">0</span> <span class="ow">in</span> <span class="n">degree</span><span class="p">:</span>
+        <span class="n">target_index</span> <span class="o">=</span> <span class="n">degree</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">record</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">target_index</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">record</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">degree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">-=</span><span class="mi">1</span>
+        <span class="n">degree</span><span class="p">[</span><span class="n">target_index</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Removed&quot;</span><span class="p">,</span><span class="n">titles</span><span class="p">[</span><span class="n">target_index</span><span class="p">],</span><span class="s2">&quot;from the equation! Degrees are now&quot;</span><span class="p">,</span><span class="n">degree</span><span class="p">)</span>
+
+<span class="c1"># Prettification: Just dressing the algorithm up so that it looks saner.</span>
+<span class="k">def</span> <span class="nf">topological_ordering_v2</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span><span class="n">titles</span><span class="p">):</span>
+    <span class="n">degree</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">record</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">character</span><span class="p">):</span>
+            <span class="n">degree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">+=</span><span class="n">record</span>
+    <span class="n">output_string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">write</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">while</span> <span class="mi">0</span> <span class="ow">in</span> <span class="n">degree</span><span class="p">:</span>
+        <span class="n">target_index</span> <span class="o">=</span> <span class="n">degree</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">record</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">target_index</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">record</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">degree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">-=</span><span class="mi">1</span>
+        <span class="n">degree</span><span class="p">[</span><span class="n">target_index</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">output_string</span><span class="o">+=</span><span class="n">titles</span><span class="p">[</span><span class="n">target_index</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot; &gt; &quot;</span>
+        <span class="n">write</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="n">write</span><span class="p">:</span>
+        <span class="n">output_string</span> <span class="o">=</span> <span class="n">output_string</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">output_string</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">infinite</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">degree</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">element</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">infinite</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">break</span>
+    <span class="k">if</span> <span class="n">infinite</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">write</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;No ordering could be established!&quot;</span>
+        <span class="n">output_string</span> <span class="o">=</span> <span class="s2">&quot;Beyond this: Strongest&gt;&gt;  &quot;</span><span class="o">+</span><span class="n">output_string</span><span class="o">+</span><span class="s2">&quot;  &lt;&lt;weakest, ordering could not be established.&quot;</span>
+    <span class="k">return</span> <span class="n">output_string</span>
+
+
+<span class="n">topological_ordering_v1_1</span><span class="p">(</span><span class="n">power_matrix</span><span class="p">,</span><span class="n">power_matrix_naming</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ordering... Result:&quot;</span><span class="p">,</span><span class="n">topological_ordering_v2</span><span class="p">(</span><span class="n">power_matrix</span><span class="p">,</span><span class="n">power_matrix_naming</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Removed Batman from the equation! Degrees are now [0, -1, 1, 2]
+Removed Superman from the equation! Degrees are now [-1, -1, 0, 1]
+Removed Green Arrow from the equation! Degrees are now [-1, -1, -1, 0]
+Removed The Flash from the equation! Degrees are now [-1, -1, -1, -1]
+Ordering... Result: Batman &gt; Superman &gt; Green Arrow &gt; The Flash
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What about an infinite case?</span>
+<span class="c1"># A. Flash beats Batman</span>
+<span class="n">the_flash_a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># B. Flash beats Superman</span>
+<span class="n">the_flash_b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">power_matrix_infinite_a</span> <span class="o">=</span> <span class="p">[</span><span class="n">superman</span><span class="p">,</span><span class="n">batman</span><span class="p">,</span><span class="n">green_arrow</span><span class="p">,</span><span class="n">the_flash_a</span><span class="p">]</span>
+<span class="n">power_matrix_infinite_b</span> <span class="o">=</span> <span class="p">[</span><span class="n">superman</span><span class="p">,</span><span class="n">batman</span><span class="p">,</span><span class="n">green_arrow</span><span class="p">,</span><span class="n">the_flash_b</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ordering... Result:&quot;</span><span class="p">,</span><span class="n">topological_ordering_v2</span><span class="p">(</span><span class="n">power_matrix_infinite_a</span><span class="p">,</span><span class="n">power_matrix_naming</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ordering... Result:&quot;</span><span class="p">,</span><span class="n">topological_ordering_v2</span><span class="p">(</span><span class="n">power_matrix_infinite_b</span><span class="p">,</span><span class="n">power_matrix_naming</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ordering... Result: No ordering could be established!
+Ordering... Result: Beyond this: Strongest&gt;&gt;  Batman  &lt;&lt;weakest, ordering could not be established.
+</pre></div>
+</div>
+</div>
+</div>
+<section id="since-we-re-on-the-topic-of-graphs-let-s-consider-another-classical-graph-greedy-problem-this-is-a-data-compression-problem-called-the-huffman-coding-problem">
+<h2>Since we’re on the topic of graphs, let’s consider another classical graph greedy problem. This is a data compression problem called the Huffman coding problem.<a class="headerlink" href="#since-we-re-on-the-topic-of-graphs-let-s-consider-another-classical-graph-greedy-problem-this-is-a-data-compression-problem-called-the-huffman-coding-problem" title="Permalink to this headline">#</a></h2>
+<p>The idea behind Huffman coding is this:</p>
+<ol class="simple">
+<li><p>You have a limited “alphabet” of symbols that will be sent over a certain channel in binary.</p></li>
+<li><p>You want to make it so that this alphabet is unique.</p></li>
+<li><p>You want to make it so that it is minimal.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>As an example, let&#39;s say you have an alphabet of length 3. Three letters, a, b and c.
+What&#39;s wrong with this mapping? a:00 b:0 c:10
+Well, consider the message 000. Is it ab? Or ba?
+</pre></div>
+</div>
+<p>This sort of ambiguity is not allowed in a correct solution. There should be only <strong>one</strong> valid cut.</p>
+<p>At the same time, depending on the messages you’re sending, you’re gonna want this code to be minimal. <strong>Common letters should thus occupy less space.</strong></p>
+</section>
+<section id="okay-then-we-ve-established-the-nature-of-the-problem-we-want-to-make-a-language-that-is-non-ambiguous-and-minimal">
+<h2>Okay, then, we’ve established the nature of the problem. We want to make a <strong>language</strong> that is <strong>non-ambiguous</strong> and <strong>minimal</strong>.<a class="headerlink" href="#okay-then-we-ve-established-the-nature-of-the-problem-we-want-to-make-a-language-that-is-non-ambiguous-and-minimal" title="Permalink to this headline">#</a></h2>
+<p><em>Let’s go about fixing the easier part of the problem; How do you make a language minimal?</em></p>
+<p><strong>Well, you make the most common case minimal!</strong> As we mentioned three points ago, common letters should occupy less space!</p>
+<p>So given a frequency table of how many letters on an average of each type cross the channel per unit time, we can figure out the most minimal encoding!</p>
+<p><em>What about non-ambiguous nature? Well, that’s a tougher problem.</em></p>
+</section>
+<section id="what-do-you-do-when-you-run-into-a-tough-problem-you-draw-it-out">
+<h2>What do you do when you run into a tough problem? You <strong>draw it out!</strong><a class="headerlink" href="#what-do-you-do-when-you-run-into-a-tough-problem-you-draw-it-out" title="Permalink to this headline">#</a></h2>
+<p>But how?</p>
+<p>Well, this is binary, and you’re dealing with a sequence that needs to be interpreted a certain way. In a way, you’re trying to make <strong>decisions</strong> about <strong>how long (deep) a word must go in binary form.</strong></p>
+<p>Ring a bell?</p>
+<p><em>Consider the following problem for the alphabet and freq table.</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Input</span><span class="p">:</span>
+
+<span class="n">Letters</span><span class="p">:</span> <span class="n">a</span> <span class="o">|</span> <span class="n">b</span> <span class="o">|</span> <span class="n">c</span> <span class="o">|</span> <span class="n">d</span> <span class="o">|</span> <span class="n">e</span>
+<span class="n">Freqs</span><span class="p">:</span>   <span class="mi">18</span><span class="o">|</span> <span class="mi">3</span> <span class="o">|</span> <span class="mi">4</span> <span class="o">|</span> <span class="mi">6</span> <span class="o">|</span> <span class="mi">10</span>
+
+<span class="n">Output</span><span class="p">:</span>
+
+<span class="n">A</span> <span class="n">unique</span> <span class="n">language</span> <span class="n">that</span> <span class="n">provides</span> <span class="n">an</span> <span class="n">interpretation</span> <span class="k">for</span> <span class="n">each</span> <span class="n">letter</span> <span class="n">on</span> <span class="n">the</span> <span class="n">letter</span> <span class="nb">set</span><span class="p">,</span> <span class="ow">and</span> <span class="ow">is</span> <span class="n">minimal</span> <span class="n">based</span> <span class="n">on</span> <span class="n">letter</span> <span class="n">frequency</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><em>You want to make it <strong>efficient</strong> and <strong>non-ambiguous</strong>.</em></p>
+<p>Some things become very clear at first glance.</p>
+<ol class="simple">
+<li><p>The most trivial way to work with this problem is to design a tree representation.</p></li>
+<li><p>In this tree representation, there is no room for misinterpretation. Each unique sequence denoting a letter ends at a leaf.</p></li>
+<li><p>As an example, though not necessarily an optimal one:
+<img alt="An example of a sufficient encoding" src="_images/huff1.jpg" /></p></li>
+</ol>
+<p>Notice the fact that every sequence of unmarked tree nodes ends at a letter. This letter has no children, because having children in this sequence means that children will necessarily be non-unique. Assume b was a’s child on the ‘1’ side. You would then have an ambiguity if you had 11, because you’d be unable to tell if this was ‘aa’ or ‘b’. This is <strong>a necessity for the non-ambiguity constraint.</strong></p>
+</section>
+<section id="the-problem">
+<h2>The problem<a class="headerlink" href="#the-problem" title="Permalink to this headline">#</a></h2>
+<p>Well, it’s not quite clear how you could turn this into a greedy problem, now, is it?</p>
+<p>Let’s see what you have to work with. You have letters, with frequencies. Forget the Huffman part for a moment. <strong>Given a bunch of letters with frequencies, can you tell me how many bits long each letter should be (or how deep their bintree goes?)</strong></p>
+<p>Sure! It’s quite simple, actually, to do it by hand.</p>
+<ul class="simple">
+<li><p>a will have a length of 1. (freq 18)</p></li>
+<li><p>e will have a length of 2. (freq 10)</p></li>
+<li><p>d will have a length of 3. (freq 6)</p></li>
+<li><p>b and c can share a length of 4. (freqs 3 and 4 respectively)</p></li>
+</ul>
+<p>But, uh, how did we do that?</p>
+<ul class="simple">
+<li><p>Well, clearly, b and c had the lowest frequencies, so it made sense to make them the two siblings at the very bottom of the tree.</p></li>
+<li><p>After that, you had the following alphabet if you considered (b+c) to be a “letter” with a frequency of (3+4=)7.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Letters</span><span class="p">:</span> <span class="n">a</span> <span class="o">|</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span> <span class="o">|</span> <span class="n">d</span> <span class="o">|</span> <span class="n">e</span>
+<span class="n">Freqs</span><span class="p">:</span>   <span class="mi">18</span><span class="o">|</span>   <span class="mi">7</span>   <span class="o">|</span> <span class="mi">6</span> <span class="o">|</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p><img alt="Step 1" src="_images/huff2.png" /></p>
+<ul class="simple">
+<li><p>Clearly, again, d and (b+c) were next on the chopping board, you can make them siblings, no problem!</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Letters</span><span class="p">:</span> <span class="n">a</span> <span class="o">|</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span> <span class="o">+</span> <span class="n">d</span> <span class="o">|</span> <span class="n">e</span>
+<span class="n">Freqs</span><span class="p">:</span>   <span class="mi">18</span><span class="o">|</span>     <span class="mi">13</span>    <span class="o">|</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p><img alt="Step 2" src="_images/huff3.png" /></p>
+<ul class="simple">
+<li><p>Again, (b+c+d) and e are siblings!</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Letters</span><span class="p">:</span> <span class="n">a</span> <span class="o">|</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span> <span class="o">+</span> <span class="n">d</span> <span class="o">+</span> <span class="n">e</span>
+<span class="n">Freqs</span><span class="p">:</span>   <span class="mi">18</span><span class="o">|</span>      <span class="mi">23</span>
+</pre></div>
+</div>
+<p><img alt="Step 3" src="_images/huff4.png" /></p>
+<ul class="simple">
+<li><p>And a and the rest are also siblings, and you’re done!</p></li>
+</ul>
+<p><img alt="Step 4" src="_images/huff5.png" /></p>
+<p>Clearly, <strong>treating the merged lowest-frequency siblings as letters themselves, always reduces the size of the problem by 1.</strong></p>
+<p>Also, <strong>it ensures that the resultant tree satisfies both the non-ambiguity and efficiency constraints stipulated by the problem.</strong></p>
+<p>Cool! How do we code this?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The heapq library is really OP for this sort of thing. If you want a running sort</span>
+<span class="c1"># of minimum elements that updates every time you remove something or add something,</span>
+<span class="c1"># this is the best way to maintain ordering. Insertion and removal from a heapq are</span>
+<span class="c1"># both O(logn) operations, and it ships with any default Python distro.</span>
+<span class="kn">import</span> <span class="nn">heapq</span>
+
+<span class="k">class</span> <span class="nc">TreeNode</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span>
+
+<span class="k">class</span> <span class="nc">GenerateTree</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">list_representation</span><span class="p">):</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">list_representation</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">root</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="n">list_representation</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">root</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">list_representation</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">list_representation</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">root</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">list_representation</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">root</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">list_representation</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">root</span>
+
+    <span class="k">def</span> <span class="nf">run_traversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">root</span><span class="p">,</span><span class="n">target_list</span><span class="p">,</span><span class="n">tracker_string</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="o">.</span><span class="n">left</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+            <span class="n">target_list</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">root</span><span class="o">.</span><span class="n">value</span><span class="p">,</span><span class="n">tracker_string</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">run_traversal</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">,</span><span class="n">target_list</span><span class="p">,</span><span class="n">tracker_string</span><span class="o">+</span><span class="s2">&quot;0&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">run_traversal</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">,</span><span class="n">target_list</span><span class="p">,</span><span class="n">tracker_string</span><span class="o">+</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">view_sequence</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">root_representation</span><span class="p">):</span>
+        <span class="n">target_list</span><span class="o">=</span><span class="p">[]</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">root_representation</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">run_traversal</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">target_list</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Output from tree traverasal of generated tree:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">target_list</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span><span class="n">element</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">generate_huffman</span><span class="p">(</span><span class="n">freq_dict</span><span class="p">):</span>
+    <span class="c1"># Convert to a heap</span>
+    <span class="n">letter_queue</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">freq_dict</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+    <span class="n">heapq</span><span class="o">.</span><span class="n">heapify</span><span class="p">(</span><span class="n">letter_queue</span><span class="p">)</span>
+    
+    <span class="c1"># Operate until you coalesce everything</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">letter_queue</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
+        <span class="p">[</span><span class="n">left_freq</span><span class="p">,</span><span class="n">left_letter</span><span class="p">]</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">letter_queue</span><span class="p">)</span>
+        <span class="p">[</span><span class="n">right_freq</span><span class="p">,</span><span class="n">right_letter</span><span class="p">]</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">letter_queue</span><span class="p">)</span>
+        <span class="n">consolidation</span> <span class="o">=</span> <span class="p">(</span> <span class="n">left_freq</span><span class="o">+</span><span class="n">right_freq</span> <span class="p">,</span> <span class="p">[</span><span class="n">left_letter</span><span class="p">,</span><span class="n">right_letter</span><span class="p">]</span> <span class="p">)</span>
+        <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">letter_queue</span><span class="p">,</span><span class="n">consolidation</span><span class="p">)</span>
+    
+    <span class="c1"># Display</span>
+    <span class="n">root_representation</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">letter_queue</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Output from heap processing:&quot;</span><span class="p">,</span><span class="n">root_representation</span><span class="p">)</span>
+    <span class="n">GenerateTree</span><span class="p">()</span><span class="o">.</span><span class="n">view_sequence</span><span class="p">(</span><span class="n">root_representation</span><span class="p">)</span>
+
+<span class="n">generate_huffman</span><span class="p">({</span><span class="mi">18</span><span class="p">:</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">:</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="mi">6</span><span class="p">:</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">:</span><span class="s1">&#39;e&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Output from heap processing: [&#39;a&#39;, [&#39;e&#39;, [&#39;d&#39;, [&#39;b&#39;, &#39;c&#39;]]]]
+Output from tree traverasal of generated tree:
+a -&gt; 0
+e -&gt; 10
+d -&gt; 110
+b -&gt; 1110
+c -&gt; 1111
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
