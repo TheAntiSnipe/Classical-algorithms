@@ -233,6 +233,16 @@ title="Print to PDF"
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#leetcode-11-container-with-most-water">
+     Leetcode 11: Container with most water
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#topological-ordering-problem">
+     Topological ordering problem
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#huffman-coding-problem">
      Huffman Coding Problem
     </a>
@@ -300,6 +310,16 @@ title="Print to PDF"
    1. Greedy algorithms
   </a>
   <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#leetcode-11-container-with-most-water">
+     Leetcode 11: Container with most water
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#topological-ordering-problem">
+     Topological ordering problem
+    </a>
+   </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#huffman-coding-problem">
      Huffman Coding Problem
@@ -481,7 +501,8 @@ Best value is 70
 </div>
 </div>
 <p>Let’s now try this on a problem in the wild! It won’t be obvious at first how this problem can be solved using greedy methods, but let’s break it down!</p>
-<p>Leetcode 11: Container with most water</p>
+<section id="leetcode-11-container-with-most-water">
+<h2>Leetcode 11: Container with most water<a class="headerlink" href="#leetcode-11-container-with-most-water" title="Permalink to this headline">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">You</span> <span class="n">are</span> <span class="n">given</span> <span class="n">an</span> <span class="n">integer</span> <span class="n">array</span> <span class="n">height</span> <span class="n">of</span> <span class="n">length</span> <span class="n">n</span><span class="o">.</span> <span class="n">There</span> <span class="n">are</span> <span class="n">n</span> <span class="n">vertical</span> <span class="n">lines</span> <span class="n">drawn</span> <span class="n">such</span> <span class="n">that</span> 
 <span class="n">the</span> <span class="n">two</span> <span class="n">endpoints</span> <span class="n">of</span> <span class="n">the</span> <span class="n">ith</span> <span class="n">line</span> <span class="n">are</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">height</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span>
 
@@ -557,6 +578,9 @@ area of the water.</p>
 </div>
 </div>
 </div>
+</section>
+<section id="topological-ordering-problem">
+<h2>Topological ordering problem<a class="headerlink" href="#topological-ordering-problem" title="Permalink to this headline">#</a></h2>
 <p>A better understanding of how greedy algorithms work, or rather, a more visual understanding, can be gained by looking at how they apply to graph problems. As we’ve discussed before, graphs are a family of algorithms that don’t exactly have their own archetype; Rather, they pull tactics from all the other three main families.</p>
 <p>Let’s take on an interesting example. You have five superheroes, labelled as 0,1,2,3,4. You’re with your friends arguing about who is stronger, and you have at your disposal a battle log of these superheroes, across comic series, beating each other. Now, can you establish a top dog?</p>
 <p>This problem, right here, is called a “topological ordering problem”. It’s a classical graph problem, and it’s more interesting if we put some skin in the game. Let’s name these five instead of them being dumb numbers. Sure, we’ll change them back to numbers when we program them of course.</p>
@@ -737,6 +761,7 @@ ordering could not be established.
 </div>
 </div>
 </div>
+</section>
 <section id="huffman-coding-problem">
 <h2>Huffman Coding Problem<a class="headerlink" href="#huffman-coding-problem" title="Permalink to this headline">#</a></h2>
 <p>Since we’re on the topic of graphs, let’s consider another classical graph greedy problem. This is a data compression problem called the Huffman coding problem.</p>
