@@ -284,6 +284,18 @@ title="Print to PDF"
      </li>
     </ul>
    </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interval-scheduling-problem">
+     Interval scheduling problem
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#we-need-to-go-a-bit-deeper">
+       We need to go a bit deeper!
+      </a>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
 </ul>
@@ -363,6 +375,18 @@ title="Print to PDF"
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#the-problem">
        The problem
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interval-scheduling-problem">
+     Interval scheduling problem
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#we-need-to-go-a-bit-deeper">
+       We need to go a bit deeper!
       </a>
      </li>
     </ul>
@@ -944,6 +968,100 @@ e -&gt; 10
 d -&gt; 110
 b -&gt; 1110
 c -&gt; 1111
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="interval-scheduling-problem">
+<h2>Interval scheduling problem<a class="headerlink" href="#interval-scheduling-problem" title="Permalink to this headline">#</a></h2>
+<p>We did a few graph problems here, but let’s go back to one of the more basic applications of the greedy paradigm: Job scheduling algorithms. Specifically, the interval scheduling problem is quite a topic of interest when it comes to this. In its default state, it is a greedy problem. However, it becomes a dynamic programming problem when we add more variables into the mix.</p>
+<p>Alright, for now though, we’re dealing with the base form of the problem. What do you have?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">You</span><span class="s1">&#39;ve got jobs that you need to schedule. </span>
+<span class="n">Each</span> <span class="n">job</span> <span class="n">has</span> <span class="n">a</span> <span class="n">certain</span> <span class="n">start</span> <span class="n">time</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">certain</span> <span class="n">end</span> <span class="n">time</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">idea</span> <span class="ow">is</span> <span class="n">that</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">fit</span> <span class="ow">in</span> <span class="n">jobs</span> <span class="n">such</span> <span class="n">that</span> <span class="n">you</span> <span class="n">get</span>
+<span class="n">the</span> <span class="n">most</span> <span class="o">*</span><span class="n">number</span><span class="o">*</span> <span class="n">of</span> <span class="n">jobs</span> <span class="n">filling</span> <span class="n">up</span> <span class="n">the</span> <span class="n">timescale</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Here, have an image!</p>
+<p><img alt="An example of a job scheduling problem input" src="_images/sch1.png" /></p>
+<p>Alright, let’s get to attacking this problem. Greedy problem approaches dictate:</p>
+<ol class="simple">
+<li><p>Make a decision</p></li>
+<li><p>Prove that the decision is correct</p></li>
+<li><p>Prove that the decision reduces the problem to a smaller version of the original problem.</p></li>
+</ol>
+<p>How do you make that work here?</p>
+<p>Let’s run through some candidate decisions!</p>
+<ol class="simple">
+<li><p>Choose the shortest jobs until you no longer can!
+<img alt="Not really what we hoped for!" src="_images/sch2.png" />
+Choosing the shortest jobs seems to work, however, let us consider a testcase here:
+<img alt="oops" src="_images/sch2-edge.png" />
+Due to conflicts, we run into an issue where the shortest job selection blocks the actual optimal case from being considered. It is easy to see that choosing the largest job will also lead to similar problems and would, in fact, also work against our interests.</p></li>
+<li><p>Choose the jobs that conflict with the least number of other jobs first!
+<img alt="Nope" src="_images/sch4.png" />
+Seeing as conflicts are what caused the problem, let’s try to avoid conflict as much as we can. However, as we’ve studied in greedy problems before, doing this does not necessarily help optimize the problem. Here’s an example where the anti-conflict algorithm fails:
+<img alt="oof" src="_images/sch4-edge.png" /></p></li>
+</ol>
+<p>Let’s try to manually look at optimal solutions! After going through some candidates, we see that there’s an interesting one here:</p>
+<p><img alt="Okay, what's this?" src="_images/sch5.jpeg" />
+This is cool and all, but why does it work? What did we do that makes this choice of jobs good?</p>
+<p>Well, we’re working our way down the timescale, starting at t=0, and looking at which job finishes the quickest from there. Why, then, does this strategy work?</p>
+<section id="we-need-to-go-a-bit-deeper">
+<h3>We need to go a bit deeper!<a class="headerlink" href="#we-need-to-go-a-bit-deeper" title="Permalink to this headline">#</a></h3>
+<p>What was the objective again? We wanted to schedule as many jobs as possible. The selection of the quickest terminating job, allows us to choose the next job in the <strong>most flexible manner</strong>. The exact same strategy will work in reverse. You can also choose the job that, out of the rest of them, has the <strong>latest start time</strong>.</p>
+<p>Alright! We’ve established that:</p>
+<ol class="simple">
+<li><p>The solution we came up with makes a smart choice (taking the job with the earliest end time to get optimum flexibility when going through the timescale).</p></li>
+<li><p>The solution’s smart choice is indeed smart. (by intuition, can use an exchange lemma if necessary, but this is not a theoretical algorithms class)</p></li>
+</ol>
+<p>What about #3? Does this solution reduce the size of the existing problem? Well, yes! Let’s run through the process of getting the image we saw last!</p>
+<p><img alt="That's it" src="_images/schfin.png" /></p>
+<p>Clearly, as we eliminate (in yellow) stuff that cannot be scheduled, we turn the current problem into a smaller instance of the initial problem.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Alright, let&#39;s get around to writing it and dealing with</span>
+<span class="c1"># logistics!</span>
+<span class="c1"># Testcase: The schedule shown in the initial diagram.</span>
+<span class="n">schedule</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">11</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">14</span><span class="p">],[</span><span class="mi">12</span><span class="p">,</span><span class="mi">14</span><span class="p">]]</span>
+
+<span class="c1"># First off, like we saw with the very first example of the knapsack</span>
+<span class="c1"># problem, we apply a nice little lambda to sort things out as needed.</span>
+<span class="k">def</span> <span class="nf">greedy_job_scheduler_v1</span><span class="p">(</span><span class="n">schedule</span><span class="p">):</span>
+    <span class="n">schedule</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">schedule</span><span class="p">)</span>
+
+<span class="c1"># Next, we need to figure out an algorithm that loops through this list</span>
+<span class="c1"># and, until it is empty, schedules tasks based on what we need.</span>
+<span class="c1"># This is actually a very similar routine to what we&#39;ve seen in the example</span>
+<span class="c1"># for the knapsack problem. We keep a track of the current time and pop off</span>
+<span class="c1"># the earliest task, checking its start time against the current time. If it</span>
+<span class="c1"># is valid to be scheduled, it is picked, and we skip ahead to its end time.</span>
+<span class="k">def</span> <span class="nf">greedy_job_scheduler_v2</span><span class="p">(</span><span class="n">schedule</span><span class="p">):</span>
+    <span class="n">schedule</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">current_time</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">final_schedule</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">schedule</span><span class="p">:</span>
+        <span class="p">[</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">]</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="n">current_time</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">final_schedule</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current time is&quot;</span><span class="p">,</span><span class="n">current_time</span><span class="p">,</span><span class="s2">&quot;, scheduling job&quot;</span><span class="p">,[</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">])</span>
+        <span class="n">current_time</span> <span class="o">=</span> <span class="n">end</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Final schedule is&quot;</span><span class="p">,</span><span class="n">final_schedule</span><span class="p">)</span>
+
+<span class="n">greedy_job_scheduler_v2</span><span class="p">(</span><span class="n">schedule</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current time is 0 , scheduling job [0, 3]
+Current time is 3 , scheduling job [4, 6]
+Current time is 6 , scheduling job [10, 12]
+Current time is 12 , scheduling job [12, 14]
+Final schedule is [[0, 3], [4, 6], [10, 12], [12, 14]]
 </pre></div>
 </div>
 </div>
